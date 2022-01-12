@@ -97,7 +97,90 @@
             <div class="col-12 col-md-9 pt-3">
                 <div class="container p-0">
                     <div class="row">
-                        <div class="card p-0">
+                        <div class="p-0">
+                            <button class="col-2 btn btn-success"
+                                data-bs-toggle="modal" data-bs-target="#modal_create">Thêm mới</button>
+
+                            <div class="modal fade" id="modal_create" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <form action="" method="">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Thêm mới sinh viên</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mt-2 row">
+                                                    <label for="fullname" class="col-2">Họ tên</label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="fullname" id="fullname" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="number" class="col-2">SĐT</label>
+                                                    <div class="col-10">
+                                                        <input type="tel" class="form-control" name="number" id="number" />
+                                                        <small class="text-danger">Sai định dạng email</small>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="email" class="col-2">Email</label>
+                                                    <div class="col-10">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" name="email" id="email" />
+                                                            <span class="input-group-text" id="basic-addon2">@fpt.edu.vn</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="email" class="col-2">Ảnh đại diện</label>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control" name="avatar" id="avatar" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="password" class="col-2">Mật khẩu</label>
+                                                    <div class="col-10">
+                                                        <input type="password" class="form-control" name="password" id="password" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label for="chuyen_nganh" class="col-2">Chuyên ngành</label>
+                                                    <div class="col-10">
+                                                        <select class="form-select" name="chuyen_nganh" id="chuyen_nganh">
+                                                            <option selected disabled>Chọn chuyên ngành</option>
+                                                            <option value="udpm">Ứng dụng phần mềm</option>
+                                                            <option value="tktw">Thiết kế trang web</option>
+                                                            <option value="ltmt">Lập trình máy tính</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 row">
+                                                    <label class="col-2">Giới tính</label>
+                                                    <div class="col-10 row">
+                                                        <div class="col-2">
+                                                            <input type="radio" name="gioi_tinh" class="form-check-input" />
+                                                            <label>Nam</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="radio" name="gioi_tinh" class="form-check-input" />
+                                                            <label>Nữ</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Đóng
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Thêm mới</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-0 mt-2">
                             <div class="card-header">Danh sách khách hàng</div>
                             <div class="table-responsive">
                                 <table class="table table-striped text-nowrap">
