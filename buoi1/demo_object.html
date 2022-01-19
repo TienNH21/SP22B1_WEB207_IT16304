@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Object</title>
+</head>
+<body ng-app="demo_object_app">
+    <ul ng-controller="my_controller">
+        <li>{{ info.ten }}</li>
+        <li>{{ info.ma }}</li>
+        <li>{{ info.email }}</li>
+        <li>{{ info.sdt }}</li>
+        <li>{{ info.chuyen_nganh }}</li>
+    </ul>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        // B1: Tạo UD AngularJs
+        const app = angular.module("demo_object_app", []);
+
+        // B2: Khai báo phạm vi với ng-app
+        // B3: Tạo controller & khai báo với angular
+        function myFunc($scope) {
+            $scope.info = {
+                ten: "Ng Van A",
+                ma: "PH12312",
+                email: "anvph12312@fpt.edu.vn",
+                sdt: "0123123123",
+                chuyen_nganh: "UDPM"
+            };
+        }
+
+        app.controller("my_controller", myFunc);
+    </script>
+</body>
+</html>

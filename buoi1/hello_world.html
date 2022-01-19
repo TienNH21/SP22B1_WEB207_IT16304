@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16304</title>
+</head>
+<body ng-app="hello_it16304_app">
+    <div ng-controller="hello_controller">
+        {{ message }}
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        // B1: Tạo mới 1 UD AngularJs với tên: "hello_it16304_app"
+        const app = angular.module("hello_it16304_app", []);
+
+        // B2: Khai báo phạm vi hoạt động của UD AngularJs với chỉ thị: ng-app
+        // B3: Tạo các controller & khai báo với UD AngularJs
+        function helloController($scope) {
+            $scope.message = "Hello IT16304";
+        }
+
+        app.controller("hello_controller", helloController);
+
+        // Khai báo phạm vi hoạt động của controller
+        // B4: Sử dụng AngularJs Expression để hiển thị giá trị
+    </script>
+</body>
+</html>
