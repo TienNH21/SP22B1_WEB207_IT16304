@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16304 - Demo $scope 2</title>
+</head>
+<body ng-app="demo_scope_2">
+    <!-- Parent -->
+    <div ng-controller="parent_controller">
+        {{ parent_msg }}
+        <!-- Child 1 -->
+        <div ng-controller="my_controller_1" style="height: 200px; background-color: aqua;">
+            {{ child_msg_1 }}
+
+            <!-- C1: Truy xuất parent_msg trực tiếp vì thẻ p vẫn nằm trong phạm vi của parent_controller -->
+            <p>Parent C1: {{ parent_msg }} </p>
+
+            <!-- C2: Truy xuất tới phạm vi controller cha thông qua $parent -->
+            <p>Parent C2: {{ $parent.parent_msg }} </p>
+
+            <p>Root: {{ $parent.$parent.root_msg }} </p>
+        </div>
+
+        <!-- Child 2 -->
+        <div ng-controller="my_controller_2" style="height: 200px; background-color: chartreuse;">
+            {{ child_msg_2 }}
+        </div>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_scope_2", []);
+
+        function parentController($scope, $rootScope) {
+            $scope.parent_msg = "Parent msg";
+            $rootScope.root_msg = "Root msg";
+
+            console.log($scope);
+        }
+
+        function myController1($scope) {
+            $scope.child_msg_1 = "Hello 1";
+        }
+
+        function myController2($scope) {
+            $scope.child_msg_2 = "Hello 2";
+        }
+
+        app.controller("parent_controller", parentController);
+        app.controller("my_controller_1", myController1);
+        app.controller("my_controller_2", myController2);
+    </script>
+</body>
+</html>
